@@ -1,0 +1,5 @@
+name / -> \
+
+program python
+arg clipboardFX.py
+arg backslashes

@@ -1,0 +1,5 @@
+name Normalize Path
+
+program python
+arg clipboardFX.py
+arg normalizePath

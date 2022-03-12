@@ -1,0 +1,5 @@
+name UPPER
+
+program python
+arg clipboardFX.py
+arg uppercase

@@ -1,0 +1,5 @@
+name lower
+
+program python
+arg clipboardFX.py
+arg lowercase
