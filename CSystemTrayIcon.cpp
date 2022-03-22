@@ -64,7 +64,7 @@ void CSystemTrayIcon::buildMenu( const QString &absoluteDirPath , CSqueakyMenu *
 
 	for( const QFileInfo &fileInfo : qAsConst( fileInfos ) )
 	{
-		QString absoluteFilePath = fileInfo.absoluteFilePath();
+		QString absoluteFilePath = QDir::toNativeSeparators( fileInfo.absoluteFilePath() );
 		CAlwaysMenu *subDirMenu = NULL;
 		CAlwaysAction *action = NULL;
 
@@ -170,5 +170,6 @@ void CSystemTrayIcon::systemTrayIconActivated( QSystemTrayIcon::ActivationReason
 
 void CSystemTrayIcon::openApplicationDirectory( void )
 {
-	Util::startDetached( CProgramSettings::instance()->getFileBrowser() , QCoreApplication::applicationDirPath() );
+	QString path = QDir::toNativeSeparators( QCoreApplication::applicationDirPath() );
+	Util::startDetached( CProgramSettings::instance()->getFileBrowser() , path );
 }
